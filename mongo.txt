@@ -1,0 +1,13 @@
+user: Peggie1948
+pass: b00ksIl0v3
+
+mongodb+srv://Peggie1948:b00ksIl0v3@cluster0-ryw1n.gcp.mongodb.net/local_library?retryWrites=true&w=majority
+
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://Peggie1948:b00ksIl0v3@cluster0-ryw1n.gcp.mongodb.net/local_library?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("local_library").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
